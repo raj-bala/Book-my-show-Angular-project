@@ -1,0 +1,58 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+  <h1> Payment</h1>
+  <form [formGroup]="newPayment">
+    <div>
+      <label>Card Holder's Name </label> &nbsp;&nbsp;
+      <mat-form-field>
+        <input matInput name="card-holder-name" formControlName="name">
+      </mat-form-field>
+    </div>
+    <div>
+      <label>Debit/Credit Card Number </label> &nbsp;&nbsp;
+      <mat-form-field>
+        <input matInput name="card-number" type="number" formControlName="cardNumber">
+      </mat-form-field>
+    </div>
+    <div>
+      <label>Expiration Date </label> &nbsp;&nbsp;
+      <mat-form-field>
+        <mat-select formControlName="expirationMonth">
+          <mat-option value="option">Month</mat-option>
+          <mat-option value="01">Jan (01)</mat-option>
+          <mat-option value="02">Feb (02)</mat-option>
+          <mat-option value="03">Mar (03)</mat-option>
+          <mat-option value="04">Apr (04)</mat-option>
+          <mat-option value="05">May (05)</mat-option>
+          <mat-option value="06">June (06)</mat-option>
+          <mat-option value="07">July (07)</mat-option>
+          <mat-option value="08">Aug (08)</mat-option>
+          <mat-option value="09">Sep (09)</mat-option>
+          <mat-option value="10">Oct (10)</mat-option>
+          <mat-option value="11">Nov (11)</mat-option>
+          <mat-option value="12">Dec (12)</mat-option>
+        </mat-select>
+      </mat-form-field> &nbsp;&nbsp;
+      <mat-form-field>
+        <mat-select formControlName="expirationYear">
+          <mat-option value="20">2020</mat-option>
+          <mat-option value="21">2021</mat-option>
+          <mat-option value="22">2022</mat-option>
+          <mat-option value="23">2023</mat-option>
+          <mat-option value="24">2024</mat-option>
+          <mat-option value="25">2025</mat-option>
+          <mat-option value="26">2026</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <label>Card CVV </label> &nbsp;&nbsp;
+      <mat-form-field>
+        <input matInput name="cvv" type="number" formControlName="cvv">
+      </mat-form-field>
+
+    </div>
+    <mat-button-toggle-group class="btn-width">
+      <mat-button-toggle (click)="openConfirmDialog()">Pay Now</mat-button-toggle>
+    </mat-button-toggle-group>
+  </form>
+</div>

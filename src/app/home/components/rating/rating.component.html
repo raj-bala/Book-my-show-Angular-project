@@ -1,0 +1,11 @@
+
+    <div fxLayout="row" class="rating">
+  
+      <div *ngFor="let star of ratingMovie">
+        <mat-icon *ngIf="star === 'star'">star_rate</mat-icon>
+        <mat-icon *ngIf="star === 'notstar'">star_border</mat-icon>
+        <mat-icon *ngIf="star === 'half'">star_half</mat-icon> 
+      </div>
+      
+      <h6 class="vote">{{ movie.vote_average/2}} ({{ movie.vote_count}})</h6>
+    </div>

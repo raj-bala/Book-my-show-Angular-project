@@ -1,0 +1,29 @@
+.profile-image {
+  margin-top: 10px;
+  color: rgb(26, 22, 22);
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
+.add-preference-dropdown form mat-form-field {
+  margin-left: 30px;
+}
+
+:host /deep/ .mat-select-value {
+  color: rgb(26, 22, 22);
+}
+
+:host /deep/ .mat-form-field-infix {
+  color: rgb(17, 16, 16);
+}
+
+:host /deep/.mat-form-field-label {
+  color: rgb(20, 19, 19);
+}
+
+.accept {
+  margin-left: 40%;
+  margin-top: 8%;
+}

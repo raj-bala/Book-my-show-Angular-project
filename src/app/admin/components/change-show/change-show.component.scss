@@ -1,0 +1,19 @@
+.cardContent {
+  width: 150px;
+  min-width: 10px;
+  max-width: 250px;
+  margin-top: 20px;
+}
+
+:host /deep/ .mat-select-value {
+  color: rgb(19, 18, 18) !important;
+}
+
+:host /deep/.mat-form-field-label {
+  color: rgb(8, 8, 8);
+}
+
+.accept {
+  margin-left: 40%;
+  margin-top: 8%;
+}

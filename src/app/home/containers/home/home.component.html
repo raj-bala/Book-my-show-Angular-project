@@ -1,0 +1,6 @@
+<div>
+
+  <app-home-page [moviesList]="nowPlayingMoviesList" [upcomingList]="upcomingMoviesList" [theaterList]="theaterList" [userPreference]="userPreference"
+    (getNewNowPlayingMovies)="getNewSetofNowPlayingMovies($event)" (getNewUpcomingMovies)="getNewSetofComingMovies($event)"></app-home-page>
+
+</div>

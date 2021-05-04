@@ -1,0 +1,30 @@
+.has-search .form-control-search {
+    padding-right: 10px;
+    color: #ccc;
+  }
+  
+  .search-width {
+    width: 100%;
+  }
+
+  .header-search-box {
+    width: 100%;
+  }
+  
+  mat-placeholder {
+    color: white;
+  }
+  
+ 
+  
+  .searchContainer {
+    height: 20px;
+    width: 100%;
+    margin-top: 10px;
+  
+    input {
+      height: 80px;
+      border-radius: 10px;
+      border-color: #ff000000;
+    }
+  }

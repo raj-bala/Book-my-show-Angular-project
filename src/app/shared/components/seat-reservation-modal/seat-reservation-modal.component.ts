@@ -1,0 +1,77 @@
+import { Component, OnInit, Inject, ChangeDetectionStrategy } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { Router } from '@angular/router';
+import { TMDB_URLS } from '../../config';
+
+@Component({
+  selector: 'app-seat-reservation-modal',
+  templateUrl: './seat-reservation-modal.component.html',
+  styleUrls: ['./seat-reservation-modal.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class SeatReservationModalComponent implements OnInit {
+  imagesPath = TMDB_URLS.IMAGE_URL;
+  movieTitle;
+  screen;
+  time;
+
+  rows: string[] = ['A', 'B', 'C', 'D'];
+  cols: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+  reserved: string[] = ['A2', 'A3', 'B5', 'C1', 'C2', 'D4'];
+  selected: string[] = [];
+
+  ticketPrice = 120;
+  convFee = 30;
+  totalPrice = 0;
+  currency = 'Rs';
+  showBook: boolean;
+  movieList;
+  constructor(
+    public dialog: MatDialog,
+    private dialogRef: MatDialogRef<SeatReservationModalComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private router: Router
+  ) {
+  }
+
+  ngOnInit() {
+    const authValid = sessionStorage.getItem('authDetails');
+    if (authValid) {
+      this.showBook = true;
+    } else {
+      this.showBook = false;
+    }
+  }
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+  onCloseConfirm() {
+    this.dialogRef.close('Confirm');
+    const total: number = this.ticketPrice * this.selected.length + this.convFee;
+    const theater = this.screen || '';
+    this.router.navigate(['/payment', this.movieTitle, theater, '10:00', this.selected.join(','), total]);
+  }
+  onCloseCancel() {
+    this.dialogRef.close('Cancel');
+  }
+
+  getStatus(seatPos: string) {
+    if (this.reserved.indexOf(seatPos) !== -1) {
+      return 'reserved';
+    } else if (this.selected.indexOf(seatPos) !== -1) {
+      return 'selected';
+    }
+  }
+
+  seatClicked(seatPos: string) {
+    const index = this.selected.indexOf(seatPos);
+    if (index !== -1) {
+      this.selected.splice(index, 1);
+    } else {
+      if (this.reserved.indexOf(seatPos) === -1) {
+        this.selected.push(seatPos);
+      }
+    }
+  }
+}

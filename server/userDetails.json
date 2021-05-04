@@ -1,0 +1,66 @@
+{
+  "userDetails": {
+    "users": [
+      {
+        "uid": "101590852450539536978",
+        "name": "Punith Gowda N",
+        "image": "https://lh3.googleusercontent.com/a-/AAuE7mDVwHhauttwavwJycmv7PhK-GrdSwoCKLSytD21=s96-c",
+        "email": "hi@punith.me",
+        "role": "Admin",
+        "preferences": {
+          "lang": "en",
+          "generes": [],
+          "theaters": []
+        },
+        "ratings": {
+          "movieId": "",
+          "rating": ""
+        }
+      },
+      {
+        "uid": "101809845761999347384",
+        "name": "raj bala",
+        "image": "https://lh3.googleusercontent.com/a-/AOh14GikgUUgGDC8HfBqFwRvK0KRj5IIqQNnHHgPyANv5A=s96-c",
+        "email": "raj.jnv1234@gmail.com",
+        "role": "Admin",
+        "preferences": {
+          "lang": "en",
+          "generes": "9648",
+          "theaters": "pvr"
+        },
+        "ratings": {
+          "movieId": "",
+          "rating": ""
+        }
+      }
+    ]
+  },
+  "theater": {
+    "theaters": [
+      {
+        "tid": "1",
+        "name": "Kapali",
+        "city": "Bangalore",
+        "gLocation": "test",
+        "parkingfacilities": "yes",
+        "capacity": 50,
+        "movies": [
+          699046,
+          447332
+        ]
+      },
+      {
+        "tid": "2",
+        "name": "pvr",
+        "city": "bang",
+        "gLocation": "bang",
+        "parkingfacilities": "yes",
+        "capacity": 50,
+        "movies": [
+          699046,
+          447332
+        ]
+      }
+    ]
+  }
+}
